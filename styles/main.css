@@ -69,6 +69,12 @@ header #drawer:after {
 }
 
 @media screen and (min-width: 1280px) {
+  header #drawer:after {
+    background: unset;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   header #drawer {
     position: static;
     width: unset;
