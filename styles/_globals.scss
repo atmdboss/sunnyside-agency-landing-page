@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+
+$gridHeight: 600px;
+$fontSize-sm: 18px;
+$fontSize-md: 24px;
+$fontSize-lg: 30px;
+$fontFamilyBarlow: 'Barlow', sans-serif;
+$fontFamilyFraunces: 'Fraunces', serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: $fontSize-sm;
+  font-family: $fontFamilyBarlow;
+}

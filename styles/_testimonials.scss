@@ -1,0 +1,62 @@
+section.testimonials {
+  padding: 3rem;
+  text-align: center;
+
+  h2 {
+    color: $grayishBlue;
+    text-transform: uppercase;
+    font-family: $fontFamilyFraunces;
+    font-size: $fontSize-sm;
+    letter-spacing: 5px;
+  }
+
+  @include desktop {
+    padding: 6rem 3rem;
+  }
+  .cards {
+    margin-top: 4rem;
+
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .card {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include desktop {
+      margin: 2rem;
+    }
+
+    .icon {
+      width: 70px;
+      height: 70px;
+
+      img {
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    & > p {
+      margin: 2rem 0;
+      color: $extremeDarkgrayishBlue;
+    }
+
+    .card-footer {
+      .name {
+        color: $darkBlueDesaturated;
+        font-family: $fontFamilyFraunces;
+        font-weight: 900;
+      }
+      .position {
+        color: $grayishBlue;
+        font-size: $fontSize-sm - 4;
+      }
+    }
+  }
+}

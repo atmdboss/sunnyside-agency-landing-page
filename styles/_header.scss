@@ -1,0 +1,133 @@
+header {
+  background-image: url('../images/mobile/image-header.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+
+  @include desktop {
+    background-image: url('../images/desktop/image-header.jpg');
+  }
+
+  //   NAVBAR CONTENTS
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  #hamburger {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  #drawer {
+    position: fixed;
+    top: 120px;
+    left: 100vw;
+    width: 90vw;
+    z-index: 10;
+    background-color: $white;
+    transition: left 300ms ease-in-out;
+    padding: 1rem;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: -37px;
+      right: 0px;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(to bottom right, transparent 0%, transparent 50%, $white 50%, $white 100%);
+    }
+
+    @include desktop {
+      position: static;
+      width: unset;
+      background-color: unset;
+      padding: 0;
+    }
+
+    &.open {
+      left: 5vw;
+    }
+  }
+
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include desktop {
+      flex-direction: row;
+    }
+
+    li {
+      list-style-type: none;
+      margin: 1rem 0;
+
+      @include desktop {
+        margin: 0 1rem;
+      }
+
+      a {
+        color: $darkGrayisBlue;
+        text-decoration: none;
+
+        @include desktop {
+          color: $white;
+        }
+      }
+
+      .contact-btn {
+        background-color: $yellow;
+        border: none;
+        outline: none;
+        padding: 0.8rem 1.2rem;
+        border-radius: 25px;
+        font-family: $fontFamilyFraunces;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $white;
+          background-color: lighten($darkBlue, 55%);
+          cursor: pointer;
+        }
+
+        @include desktop {
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+  //   HERO CONTENTS
+  .hero {
+    position: relative;
+
+    h1 {
+      color: $white;
+      text-align: center;
+      font-family: $fontFamilyFraunces;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+      word-spacing: 10px;
+
+      @include desktop {
+        letter-spacing: 5px;
+        font-size: 3rem;
+      }
+    }
+
+    img {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

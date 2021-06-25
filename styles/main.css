@@ -1,0 +1,508 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 18px;
+  font-family: "Barlow", sans-serif;
+}
+
+header {
+  background-image: url("../images/mobile/image-header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
+
+@media screen and (min-width: 1280px) {
+  header {
+    background-image: url("../images/desktop/image-header.jpg");
+  }
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 1280px) {
+  header #hamburger {
+    display: none;
+  }
+}
+
+header #drawer {
+  position: fixed;
+  top: 120px;
+  left: 100vw;
+  width: 90vw;
+  z-index: 10;
+  background-color: white;
+  -webkit-transition: left 300ms ease-in-out;
+  transition: left 300ms ease-in-out;
+  padding: 1rem;
+}
+
+header #drawer:after {
+  content: '';
+  position: absolute;
+  top: -37px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  background: -webkit-gradient(linear, left top, right bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, white), to(white));
+  background: linear-gradient(to bottom right, transparent 0%, transparent 50%, white 50%, white 100%);
+}
+
+@media screen and (min-width: 1280px) {
+  header #drawer {
+    position: static;
+    width: unset;
+    background-color: unset;
+    padding: 0;
+  }
+}
+
+header #drawer.open {
+  left: 5vw;
+}
+
+header .nav-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 1280px) {
+  header .nav-items {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+header .nav-items li {
+  list-style-type: none;
+  margin: 1rem 0;
+}
+
+@media screen and (min-width: 1280px) {
+  header .nav-items li {
+    margin: 0 1rem;
+  }
+}
+
+header .nav-items li a {
+  color: #818498;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1280px) {
+  header .nav-items li a {
+    color: white;
+  }
+}
+
+header .nav-items li .contact-btn {
+  background-color: #fad400;
+  border: none;
+  outline: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 25px;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+header .nav-items li .contact-btn:hover {
+  color: white;
+  background-color: #b1dbed;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1280px) {
+  header .nav-items li .contact-btn {
+    background-color: white;
+  }
+}
+
+header .hero {
+  position: relative;
+}
+
+header .hero h1 {
+  color: white;
+  text-align: center;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  word-spacing: 10px;
+}
+
+@media screen and (min-width: 1280px) {
+  header .hero h1 {
+    letter-spacing: 5px;
+    font-size: 3rem;
+  }
+}
+
+header .hero img {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+main section.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+@media screen and (min-width: 1280px) {
+  main section.grid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  main section.grid:nth-of-type(1) .image {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+main section.grid:nth-of-type(2) .text span:hover {
+  cursor: pointer;
+}
+
+main section.grid:nth-of-type(2) .text span:hover:after {
+  background-color: #fe7867;
+}
+
+main section.grid:nth-of-type(2) .text span:after {
+  background-color: #ffbcb3;
+}
+
+@media screen and (min-width: 1280px) {
+  main section.grid .image {
+    height: 600px;
+  }
+}
+
+main section.grid .image picture,
+main section.grid .image img {
+  width: 100%;
+  height: 100%;
+}
+
+main section.grid .text {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  main section.grid .text {
+    padding: 3rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  main section.grid .text {
+    padding: 0 25%;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+main section.grid .text h2 {
+  font-family: "Fraunces", serif;
+  color: #23303e;
+  font-size: 30px;
+}
+
+main section.grid .text span {
+  color: #23303e;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  font-family: "Fraunces", serif;
+}
+
+main section.grid .text span:hover {
+  cursor: pointer;
+}
+
+main section.grid .text span:hover:after {
+  background-color: #fad400;
+}
+
+main section.grid .text span:after {
+  content: '';
+  position: absolute;
+  width: 147px;
+  height: 10px;
+  left: -10px;
+  bottom: -2px;
+  z-index: -1;
+  border-radius: 25px;
+  background-color: #fff3ad;
+}
+
+main section.grid .text p {
+  margin: 2rem 0;
+  color: #818498;
+}
+
+main section.grid .text-only {
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: center;
+  padding: 3rem 25%;
+}
+
+main section.grid .text-only h2 {
+  font-family: "Fraunces", serif;
+}
+
+main section.grid .text-only p {
+  margin-top: 1rem;
+}
+
+main section.grid .text-only:nth-of-type(1) {
+  background-image: url("../images/mobile/image-graphic-design.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #25564b;
+}
+
+@media screen and (min-width: 768px) {
+  main section.grid .text-only:nth-of-type(1) {
+    background-image: url("../images/desktop/image-graphic-design.jpg");
+  }
+}
+
+main section.grid .text-only:nth-of-type(2) {
+  background-image: url("../images/mobile/image-photography.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #19536b;
+}
+
+@media screen and (min-width: 768px) {
+  main section.grid .text-only:nth-of-type(2) {
+    background-image: url("../images/desktop/image-photography.jpg");
+  }
+}
+
+section.testimonials {
+  padding: 3rem;
+  text-align: center;
+}
+
+section.testimonials h2 {
+  color: #a7abae;
+  text-transform: uppercase;
+  font-family: "Fraunces", serif;
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+
+@media screen and (min-width: 1280px) {
+  section.testimonials {
+    padding: 6rem 3rem;
+  }
+}
+
+section.testimonials .cards {
+  margin-top: 4rem;
+}
+
+@media screen and (min-width: 1280px) {
+  section.testimonials .cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+section.testimonials .card {
+  margin: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 1280px) {
+  section.testimonials .card {
+    margin: 2rem;
+  }
+}
+
+section.testimonials .card .icon {
+  width: 70px;
+  height: 70px;
+}
+
+section.testimonials .card .icon img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+section.testimonials .card > p {
+  margin: 2rem 0;
+  color: #5a636c;
+}
+
+section.testimonials .card .card-footer .name {
+  color: #23303e;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+}
+
+section.testimonials .card .card-footer .position {
+  color: #a7abae;
+  font-size: 14px;
+}
+
+section.gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 1280px) {
+  section.gallery {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+section.gallery picture,
+section.gallery img {
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  background-color: #9ccec4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer-logo {
+  margin-top: 2rem;
+}
+
+footer .footer-logo svg path {
+  fill: #458c7e;
+}
+
+footer .links {
+  margin: 1rem 0;
+}
+
+footer .links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .links ul .link-item {
+  margin: 0 0.5rem;
+  list-style: none;
+}
+
+footer .links ul .link-item a {
+  color: #458c7e;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+footer .links ul .link-item a:hover {
+  color: white;
+  cursor: pointer;
+}
+
+footer .socials {
+  margin: 2rem 0;
+}
+
+footer .socials svg {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+footer .socials svg:hover {
+  cursor: pointer;
+}
+
+footer .socials svg:hover path {
+  fill: white;
+}
+/*# sourceMappingURL=main.css.map */
